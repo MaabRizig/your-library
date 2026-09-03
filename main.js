@@ -16,10 +16,12 @@ function addBook(author,title,pageCount,readStatus){
 
 function displayBooks(){
     const BOOKSCONTAINER = document.querySelector(".books-container");
-    
+
     booksArr.forEach((book)=>{
         let bookDiv = document.createElement("div");
         bookDiv.classList.add("book");
+        let menuIcon = document.createElement("span");
+        menuIcon.classList.add("book-menu","icon");
         let infoList = document.createElement("ul");
 
         let appendInfoElement = (preText,value)=>{
@@ -33,6 +35,7 @@ function displayBooks(){
         appendInfoElement("Page count: ",book.pageCount);
         appendInfoElement("Reading status: ",book.readStatus);
         
+        bookDiv.appendChild(menuIcon);
         bookDiv.appendChild(infoList);
         BOOKSCONTAINER.appendChild(bookDiv);
     })
@@ -40,9 +43,13 @@ function displayBooks(){
 
 
 
-// addBook("maab","how to make",454,"reading");
-// addBook("ali","how to be a bee",343,"done reading");
-// console.log(booksArr);
-// displayBooks();
+addBook("maab","how to make",454,"reading");
+addBook("ali","how to be a bee",343,"done reading");
+addBook("maab","how to make",454,"reading");
+addBook("ali","how to be a bee",343,"done reading");
+addBook("maab","how to make",454,"reading");
+addBook("ali","how to be a bee",343,"done reading");
+console.log(booksArr);
+displayBooks();
 
 
