@@ -23,14 +23,56 @@
             <div class="book">
                 <span class="book-menu icon"></span>
                 <ul>
-                    <li>Maab Rizig</li>
-                    <li>How to be unbreakable</li>
-                    <li>Page count: 100</li>
-                    <li>read status</li>
+                    <li>AI Engineering</li>
+                    <li>Author: Chip Huyen</li>
+                    <li>Page count: 300</li>
+                    <li>Reading status: Reading</li>
                 </ul>
             </div>
         </div>
+        <dialog id="add-dialog" closedby="any">
+            <form method="dialog">
+                <div class="form-control">
+                    <label for="author">Author</label>
+                    <input id="author" name="author" type="text"/>
+                </div>
+                <div class="form-control">
+                    <label for="title">Title</label>
+                    <input id="title" name="title" type="text" autofocus required/>
+                    <span></span>
+                </div>
+                <div class="form-control">
+                    <label for="page-count">No. of pages</label>
+                    <input id="page-count" name="pageCount" type="number" step="1"/>
+                </div>
+                <fieldset class="radio-list form-control">
+                    <legend>Reading status</legend>
+                    <div>
+                        <input id="want-read" name="readStatus" type="radio" value="1" checked/>
+                        <label for="want-read">Want to read</label>
+                    </div>
+                    <div>
+                        <input id="reading" name="readStatus" type="radio" value="2"/>
+                        <label for="reading">Reading</label>
+                    </div>
+                    <div>
+                        <input id="finished" name="readStatus" type="radio" value="3"/>
+                        <label for="finished">Finished</label>
+                    </div>
+                </fieldset>
+                <button id="submit-button" type="submit">Add book</button>
+            </form>
+        </dialog>
+        <!-- <dialog class="menu" open closedby="any">
+            <ul>
+                <li>
+                    <span class="icon"></span>
+                    <span>Delete</span>
+                </li>
+            </ul>
+        </dialog> -->
     </div>
+
     
 </body>
 <script src="main.js"></script>

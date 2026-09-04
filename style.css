@@ -4,6 +4,13 @@
     box-sizing: inherit;
 }
 
+
+:root {
+    --clr-green-100: #B0BA99;
+    --clr-green-200: #809947;
+    --label-input-gap: 5px;
+    --form-control-gap: 20px;
+}
 body {
     box-sizing: border-box;
     background-color: lightblue;
@@ -23,7 +30,7 @@ ul{
 
 .books-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
     gap: 20px;
     background-color: #F7F1DE;
     margin:  20px 0;
@@ -47,9 +54,7 @@ ul{
 }
 
 .book-menu {
-    width: 20px;
-    height: 20px;
-    left: 90%;
+    left: calc(100% - 30px);
     background-image: url(images/dots-vertical.svg);
     background-size: cover;
 }
@@ -60,6 +65,12 @@ ul{
 
 .book li {
     margin-bottom: 10px;
+}
+
+.book li:first-child {
+    font-size: 1.1em;
+    font-weight: bold;
+    padding-bottom: 10px;
 }
 
 
@@ -77,14 +88,16 @@ ul{
 
 .add-book .icon {
     background-image: url(images/plus.svg);
-    width: 20px;
-    height: 20px;
 }
 
+
+.add-book:hover {
+    cursor: pointer;
+}
 .header {
     width: 100%;
     padding: 20px;
-    background-color: #B0BA99;
+    background-color: var(--clr-green-100);
     color: white;
     display: flex;
     align-items: center;
@@ -98,3 +111,110 @@ ul{
     background-image: url(images/books.png);
     background-size: cover;
 }
+
+#add-dialog::backdrop {
+    position:fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+#add-dialog {
+    position: fixed;
+    inset:0;
+    margin: auto;
+    width: 40%;
+}
+form {
+    background-color: white;
+    width: 100%;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.form-control {
+    margin-bottom: var(--form-control-gap);
+    display: flex;
+    flex-direction: column;
+    gap: var(--label-input-gap);
+    position: relative;
+}
+
+.form-control > label, legend {
+    font-weight: bold;
+}
+
+fieldset {
+    border: none;
+}
+
+legend {
+    margin-bottom: var(--label-input-gap);
+}
+
+
+input[type="text"], input[type="number"], #submit-button {
+    width: 100%;
+    outline: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px rgb(180, 180, 180) solid;
+}
+
+
+#submit-button {
+    color: white;
+    background-color: var(--clr-green-100);
+    font-weight: bold;
+}
+
+input:focus, input:focus-visible {
+    border-color: rgb(13, 133, 231);
+}
+
+#submit-button:hover {
+    cursor: pointer;
+    background-color: var(--clr-green-200);
+}
+
+ 
+input:required + span::before {
+    position: absolute;
+    content: "Required";
+    background-color: rgb(39, 32, 32);
+    color: white;
+    padding: 2px 8px;
+    font-size: 0.8em;
+    font-weight: bold;
+    top: 0px;
+    right: 0px;
+}
+
+input:required:user-invalid {
+    border-color: red;
+}
+
+/* .menu {
+    position: absolute;
+    border: none;
+    border-radius: 5px;
+}
+
+.menu .icon{
+    background-image: url(images/bin.svg);
+}
+
+.menu li {
+    padding: 5px 20px;
+    display: flex;
+    gap: 5px;
+}
+
+.menu li:hover {
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: rgb(219, 218, 218);
+} */
+
