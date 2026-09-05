@@ -10,6 +10,8 @@
     --clr-green-200: #809947;
     --label-input-gap: 5px;
     --form-control-gap: 20px;
+    --menu-top-coordinate: 0;
+    --menu-left-coordinate: 0;
 }
 body {
     box-sizing: border-box;
@@ -196,10 +198,12 @@ input:required:user-invalid {
     border-color: red;
 }
 
-/* .menu {
-    position: absolute;
+.menu {
+    position: fixed;
     border: none;
+    outline: none;
     border-radius: 5px;
+    box-shadow:  1px 1px 5px rgb(116, 114, 114);
 }
 
 .menu .icon{
@@ -215,6 +219,13 @@ input:required:user-invalid {
 .menu li:hover {
     cursor: pointer;
     border-radius: 5px;
-    background-color: rgb(219, 218, 218);
-} */
+    background-color: rgb(250, 130, 130);
+}
+
+.menu-show {
+    display: block;
+    top: var(--menu-top-coordinate);
+    left: var(--menu-left-coordinate);
+
+}
 

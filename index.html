@@ -33,13 +33,13 @@
         <dialog id="add-dialog" closedby="any">
             <form method="dialog">
                 <div class="form-control">
-                    <label for="author">Author</label>
-                    <input id="author" name="author" type="text"/>
-                </div>
-                <div class="form-control">
                     <label for="title">Title</label>
                     <input id="title" name="title" type="text" autofocus required/>
                     <span></span>
+                </div>
+                <div class="form-control">
+                    <label for="author">Author</label>
+                    <input id="author" name="author" type="text"/>
                 </div>
                 <div class="form-control">
                     <label for="page-count">No. of pages</label>
@@ -63,14 +63,14 @@
                 <button id="submit-button" type="submit">Add book</button>
             </form>
         </dialog>
-        <!-- <dialog class="menu" open closedby="any">
+        <dialog class="menu" closedby="any">
             <ul>
-                <li>
+                <li data-type="deleteOpt">
                     <span class="icon"></span>
                     <span>Delete</span>
                 </li>
             </ul>
-        </dialog> -->
+        </dialog>
     </div>
 
     
