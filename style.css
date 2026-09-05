@@ -10,9 +10,8 @@
     --clr-green-200: #809947;
     --label-input-gap: 5px;
     --form-control-gap: 20px;
-    --menu-top-coordinate: 0;
-    --menu-left-coordinate: 0;
 }
+
 body {
     box-sizing: border-box;
     background-color: lightblue;
@@ -218,14 +217,28 @@ input:required:user-invalid {
 
 .menu li:hover {
     cursor: pointer;
-    border-radius: 5px;
-    background-color: rgb(250, 130, 130);
+    background-color: rgba(230, 231, 231, 0.767);
 }
 
-.menu-show {
+
+.submenu {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0px;
+    background-color: white;
+    width: max-content;
+
+}
+
+.menu li[data-opt-type="readOpt"] {
+    position: relative;
+}
+
+.menu li[data-opt-type="readOpt"]:hover .submenu{
     display: block;
-    top: var(--menu-top-coordinate);
-    left: var(--menu-left-coordinate);
-
 }
 
+.menu li[data-opt-type="readOpt"] .icon {
+    background-image: url(images/menu-right.svg);
+}

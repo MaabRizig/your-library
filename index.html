@@ -65,9 +65,24 @@
         </dialog>
         <dialog class="menu" closedby="any">
             <ul>
-                <li data-type="deleteOpt">
+                <li data-opt-type="deleteOpt">
                     <span class="icon"></span>
                     <span>Delete</span>
+                </li>
+                <li data-opt-type="readOpt">
+                    <span>Reading status</span>
+                    <span class="icon"></span>
+                    <ul class="menu submenu">
+                        <li data-read-value="1">
+                            <span>Want to read</span>
+                        </li>
+                        <li data-read-value="2">
+                            <span>Reading</span>
+                        </li>
+                        <li data-read-value="3">
+                            <span>Done Reading</span>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </dialog>
